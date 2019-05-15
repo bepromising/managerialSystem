@@ -1,0 +1,12 @@
+@mixin fade-left($left, $time:.5s) {
+    .fade-left-enter-active,
+    .fade-left-leave-active { transition: all $time ease-out; }
+    .fade-left-enter, .fade-left-leave-to { opacity: 0; transform: translate($left); }
+}
+@mixin fade-down() {
+    .fade-down-enter-active,
+    .fade-down-leave-active { transition: all 0.5 ease-out; overflow-y: hidden;}
+    .fade-down-enter, .fade-down-leave-to { height:0; }
+}
+
+

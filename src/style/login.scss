@@ -1,0 +1,81 @@
+@charset "utf-8";
+@import "vue-transition-animate";
+.loginContainer{
+    width: 100%;
+    height: 100%;
+    background: #444;
+    position: relative;
+}
+
+.loginWrap {
+    width: 360px;
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    top: 50%;
+    margin: -160px 0 0 -180px;
+    h1 {
+        font-size: 24px;
+        color: #fff;
+        text-align: center;
+        line-height: 1.5em;
+        font-family: $main-font;
+        padding-bottom: 5px;
+        font-weight: normal;
+        i {
+            color: $main-color;
+        }
+    }
+    .loginBox {
+        padding: 30px;
+        background: #fff;
+        ul {
+            width: 100%;
+            li {
+                height: 36px;
+                line-height: 36px;
+                width: 297px;
+                border: 1px solid #e5e5e5;
+                border-left: 3px solid $main-color;
+                margin-bottom: 12px;
+                border-radius: 0 8px 8px 0;
+                > .icon {
+                    font-size: 16px;
+                    color: #ccc;
+                    width: 26px;
+                    height: 26px;
+                    text-align: center;
+                    position: relative;
+                    top: 1px;
+                }
+                .fill {
+                    width: 260px;
+                    height: 34px;
+                    line-height: 34px;
+                    padding: 0 5px;
+                    margin: 0;
+                    border: 0;
+                    background: none;
+                    outline: none;
+                    font-size: 14px;
+                }
+            }
+        }
+        .loginBtn {
+            width: 80px;
+            height: 30px;
+            line-height: 30px;
+            display: block;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+            background: $main-color;
+            margin: 0 auto;
+            border: 0;
+            cursor: pointer;
+            padding: 0;
+            border-radius: 10px;
+        }
+    }
+}

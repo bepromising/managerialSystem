@@ -1,0 +1,94 @@
+@charset "utf-8";
+@import "setting";
+@import "reset";
+@import "vue-transition-animate";
+
+$menu-width: 240px;
+$header-height:60px;
+
+.wrap{ 
+    width: 100%;height: 100%;min-width:1366px;overflow:auto;position: relative;padding:$header-height 0 0 $menu-width;
+    transition: all 0.4s ease-out;
+    &.hide{padding:$header-height 0 0 0;}
+}
+.leftMenu{
+    width: $menu-width;height: 100%;padding:$header-height 0 0;position: absolute;z-index: 1;left: 0;top: 0;overflow:auto;background:$left-background;transition: all 0.4s ease-out;
+    &.hide{left: -$menu-width;}
+}
+.menuMin { width: 16px; height: 40px; background: #3D3D3D; position: absolute; z-index: 2; left: $menu-width; opacity: 0.5; cursor: pointer; top: 50%; margin: -20px 0 0; border-radius: 0 8px 8px 0; transition: all 0.4s ease-out; }
+.menuMin.hide { left: 0; }
+.menuMin:hover { opacity: 1; }
+.menuMin > i { width: 16px; height: 40px; line-height: 40px; text-align: center; font-size: 16px; color: #fff; }
+.header{
+    width: 100%;height: 60px;position: absolute;z-index: 2;left: 0;top: 0;background: $header-background;
+    > .logo{font-size: 24px;width: 400px;text-align: left;float: left;color:$header-color; text-indent: 20px;line-height: $header-height;}
+    > .loginInfo{display:inline-block;height:$header-height; float: right; padding:0 10px 0 0;line-height: $header-height;color:$header-color;}
+}
+
+.mainContent{
+    width: 100%;height: 100%;overflow:hidden;background: #f2f2f2;
+    &.scrollDisable{overflow: hidden;}
+    .hide-frame{display:none;width: 0;height: 0;}
+    > .loading { width: 100%; height: 100%; background: rgba(255, 255, 255, 1); position: absolute; left: 0; top: 0; z-index: 10; }
+    > .loading > img { display: block; position: absolute; z-index: 1; left: 50%; top: 50%; margin: -33px 0 0 -33px; }
+    > .tabsWrap {
+        width: 100%; height: 36px; box-sizing: content-box;padding:5px 0 0 0;overflow:hidden;position: relative;
+        > .scroll-btn{width: 24px;height: 34px;position: absolute;z-index: 1;top: 3px;display:block;color: $main-color;font-size: 28px;line-height: 36px;cursor: pointer;background: #fff;text-align:center;}
+        > .next{right: 0;}
+        > .prev{left: 0;}
+        ul{
+            height: 32px; border-bottom: 2px solid $main-color;box-sizing: content-box;padding:0 0 0 5px;transition:all 1.2s ease-out;
+            > li {
+                display: inline-block; padding: 0 20px; line-height: 31px; line-height: 31px; color: $main-color; font-size: 14px; border: 1px solid $main-color; border-bottom: 0; background: #fff; border-radius: 8px 8px 0 0; cursor: pointer; transition: all 0.3s ease-out;
+                user-select: none;
+                position: relative; box-sizing: content-box; margin-right: 4px;
+                > .icon { position: absolute; z-index: 1; right: 0px; top: 0px; width: 20px; height: 20px; text-align: center; line-height: 20px; display: none;font-size: 20px; }
+                &:hover {
+                    background: $main-color; color: #fff; padding-right: 30px;
+                    > .icon { display: block; }
+                }
+                &.act {
+                    background: $main-color; color: #fff;
+                }
+            }
+        }
+    }
+    .mask{width: 100%;height: 100%;position: absolute; left: 0; top: 0; z-index:9;}
+    > .tabsRightMenu{
+        width: 100px;padding:5px 0;border:1px solid $main-color;position: absolute; left: 0; top: 0; z-index:10;background: rgba(255,255,255,0.9);box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.8);
+        i{
+            cursor:pointer;display:block;line-height: 26px;color:$main-color;text-align:center;
+            &:hover{background: $main-color;color: #fff;}
+        }
+    }
+    > .viewWrap{
+        position: relative;height:100%;height: 100%;overflow:auto;
+        &.tabEnable{height:calc(100% - 36px);}
+    }
+}
+.filter { 
+    width: 100%; overflow: auto; padding: 8px 8px 0; box-sizing: border-box; min-height: 34px;
+    > li { 
+        display: inline-block; float: left; height: 32px; line-height: 32px; color: $main-color; padding:0 6px 0; margin-bottom:8px;
+        > i { display: inline-block; padding: 0 5px 0 10px; font-size: 14px; float: left; }
+        > .fill { float: left; margin-right: 10px; width: 150px; float: left; }
+        > .towns {width: 120px;float: left; }
+        > .year {width: 90px;float: left;margin-right:5px; }
+        > .dateRange {width:190px;float: left; }
+        > .quarters {width: 90px;float: left; }
+        > .odType {width: 300px;float: left; }
+        > .industry{width: 300px;float: left;}
+    }
+ }
+.hide-frame{display:none;width: 0;height: 0;}
+.page-wrap { width: 100%; text-align: center; padding: 8px 0; }
+
+.flex-row {display: flex; flex-direction: row;}
+.flex-col { display: flex; flex-direction: column; }
+
+
+
+
+
+
+
